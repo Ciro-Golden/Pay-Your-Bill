@@ -1,0 +1,39 @@
+<h1>This is my bill</h1>
+
+<%= form_tag(process_bill_path) do %>
+<div>
+    <%= label_tag(:total) %> <br>
+    <%= number_field_tag(:quantity) %>
+
+</div>
+
+<div>
+    <%= label_tag(:taxes) %> <br>
+    <%= number_field_tag(:taxes) %>
+</div>
+
+
+<div>
+
+    <%= label_tag(:tip) %> <br>
+    <%= number_field_tag(:tip) %>
+
+</div>
+
+<div>
+    <%= label_tag(:people) %> <br>
+    <%= number_field_tag(:people) %>
+
+</div>
+
+
+<%= submit_tag("calculate") %>
+
+<div>
+    <% if @perperson %>
+        <%= @perperson %>
+    <% end %> 
+
+</div>
+
+<% end %>
